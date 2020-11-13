@@ -45,7 +45,7 @@
                 android:ems="10"
                 android:fontFamily="@font/open_sans"
                 android:hint="@string/platform"
-                android:inputType="textPersonName" />
+                android:inputType="date|textPersonName" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                     android:ems="10"
                     android:fontFamily="@font/open_sans"
                     android:hint="@string/day"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     app:layout_constraintEnd_toStartOf="@+id/etMonth"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
                     android:ems="10"
                     android:fontFamily="@font/open_sans"
                     android:hint="@string/month"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/etYear"
@@ -90,7 +90,7 @@
                     android:ems="10"
                     android:fontFamily="@font/open_sans"
                     android:hint="@string/year"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

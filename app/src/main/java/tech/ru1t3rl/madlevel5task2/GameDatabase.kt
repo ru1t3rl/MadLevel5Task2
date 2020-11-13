@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.*
 
 @Database(entities = [Game::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class GameDatabase : RoomDatabase() {
     abstract fun gameDao(): GameDao
 
@@ -20,7 +21,7 @@ abstract class GameDatabase : RoomDatabase() {
                         gameRoomDatabaseInstance = Room.databaseBuilder(
                             context.applicationContext,
                             GameDatabase::class.java, DATABASE_NAME
-                        ).build()
+                        ).fallbackToDestructiveMigration().build()
                     }
                 }
             }

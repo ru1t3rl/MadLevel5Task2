@@ -12,7 +12,9 @@
     <string name="day">Day</string>
     <string name="month">Month</string>
     <string name="year">Year</string>
+    <string name="date">Day / Month / Year</string>
+    <string name="empty_field">Make sure non of the fields is empty!</string>
 
     <!-- Game Backlog -->
-    <string name="release">Release</string>
+    <string name="release_date">Release:</string>
 </resources>
