@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MadLevel5Task2</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Labels -->
+    <string name="navigation_home">Game Backlog</string>
+    <string name="navigation_add_game">Add Game</string>
+
+    <!-- Add Games Fragment -->
+    <string name="title">Title</string>
+    <string name="platform">Platform</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+
+    <!-- Game Backlog -->
+    <string name="release">Release</string>
+</resources>
