@@ -3,16 +3,15 @@ package tech.ru1t3rl.madlevel5task2
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import tech.ru1t3rl.madlevel5task2.databinding.FragmentAddGameBinding
+import java.lang.NullPointerException
 import java.time.LocalDate
 
 /**
@@ -29,7 +28,13 @@ class AddGameFragment : Fragment() {
     ): View? {
         binding = FragmentAddGameBinding.inflate(layoutInflater)
 
+        requireActivity().invalidateOptionsMenu()
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.findItem(R.id.action_delete_all).isVisible = false
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -44,13 +49,22 @@ class AddGameFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun onSaveGame() {
         val title = binding.etTitle.text.toString()
+        val date: LocalDate
 
-        val date = LocalDate.of(
-            binding.etYear.text.toString().toIntOrNull()!!,
-            binding.etMonth.text.toString().toIntOrNull()!!,
-            binding.etDay.text.toString().toIntOrNull()!!
-        )
-        Log.i("date", date.toString())
+        try {
+            date = LocalDate.of(
+                binding.etYear.text.toString().toIntOrNull()!!,
+                binding.etMonth.text.toString().toIntOrNull()!!,
+                binding.etDay.text.toString().toIntOrNull()!!
+            )
+        } catch (e: NullPointerException) {
+            Toast.makeText(
+                activity,
+                R.string.invalid_date,
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
 
         val platform = binding.etPlatform.text.toString()
 
