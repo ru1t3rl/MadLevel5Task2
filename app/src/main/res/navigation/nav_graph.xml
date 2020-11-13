@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_game_backlog">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_HomeFragment_to_AddGameFragment"
             app:destination="@id/navigation_add_game" />
     </fragment>
     <fragment
@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_add_game">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_AddGameFragment_to_HomeFragment"
             app:destination="@id/navigation_home" />
     </fragment>
 </navigation>
